@@ -1,0 +1,17 @@
+{
+  "name": "sumit-kumar-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio for Sumit Kumar",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "dotenv": "^17.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
