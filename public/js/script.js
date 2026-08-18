@@ -330,19 +330,19 @@ if (skillTabs.length > 0) {
 // ==========================================
 const projectData = {
   rentease: {
-    title: 'RentEase — Furniture & Appliance Rental Platform',
-    category: 'Full Stack Web Architecture',
-    badge: 'LIVE PRODUCT DEMO',
-    tech: ['HTML5', 'CSS3', 'JavaScript', 'Node.js', 'Responsive UI'],
-    summary: 'A clean, modern e-commerce rental platform concept designed for renting furniture and home appliances. Features product search, tenure duration calculations, responsive product grid, shopping cart flow, and seamless checkout interface.',
+    title: 'RentEase — AI-Powered Full-Stack Furniture Rental Platform',
+    category: 'AI & Full Stack Web Platform',
+    badge: 'LIVE ON RENDER',
+    tech: ['Node.js', 'Express.js', 'MongoDB / Mongoose', 'JavaScript', 'HTML5', 'CSS3', 'REST API'],
+    summary: 'An AI-powered full-stack furniture and appliance rental platform featuring intelligent conversational recommendations, multi-step tenure checkout, automated delivery tracking, and administrative analytics.',
     highlights: [
-      'Interactive pricing calculations based on rental tenure (3, 6, 12 months)',
-      'Optimized catalog filtering by room category & budget',
-      'Mobile-first responsive interface with fluid touch interactions',
-      'Ready for cloud backend integration & payment gateway'
+      'Built an intelligent customer support and furniture recommendation AI assistant with live MongoDB inventory search.',
+      'Engineered multi-step checkout with tenure-based discounts (up to 35%), address validation, and simulated payment gateway.',
+      'Implemented real-time order tracking dashboard with a 4-step delivery progress timeline and user order cancellation.',
+      'Developed a role-based Admin Management Portal for real-time revenue analytics, order lifecycle management, and inventory CRUD.'
     ],
-    github: 'https://github.com/sumit-kumar',
-    demo: '#',
+    github: 'https://github.com/skvishwakarma828401-dot/RentEase-AI-Full-Stack.',
+    demo: 'https://rentease-ai-full-stack.onrender.com',
     accentColor: '#00f0ff'
   },
   pathology: {
@@ -459,12 +459,23 @@ document.querySelectorAll('.open-modal-btn').forEach((btn) => {
 // ==========================================
 window.handleDownloadResume = function() {
   window.soundFX.playRobotChirp(600, 1200);
-  if (window.robotAI) window.robotAI.setRobotState('success', 3000);
-  
-  // Direct mailto or download trigger
-  const confirmDownload = confirm("Preparing Sumit Kumar's Full Stack Developer Resume & Portfolio Dossier. Would you like to reach out directly via email as well?");
-  if (confirmDownload) {
-    window.location.href = "mailto:skvishwakarma828401@gmail.com?subject=Sumit%20Kumar%20-%20Full%20Stack%20Developer%20Opportunity&body=Hi%20Sumit,%0D%0A%0D%0AWe%20reviewed%20your%203D%20portfolio%20and%20would%20love%20to%20connect%20regarding%20a%20developer%20opportunity.";
+  if (window.robotAI) window.robotAI.setRobotState('success', 3500);
+
+  // Trigger direct download of public/resume.pdf
+  const link = document.createElement('a');
+  link.href = 'resume.pdf';
+  link.download = 'Sumit_Kumar_FullStack_Resume.pdf';
+  link.target = '_blank';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  if (typeof confetti === 'function') {
+    confetti({
+      particleCount: 80,
+      spread: 70,
+      origin: { y: 0.7 }
+    });
   }
 };
 
